@@ -37,4 +37,9 @@ public class CustomerController {
     public Customer findById(@PathVariable Long id){
         return customerService.findById(id);    
     }
+    
+    @GetMapping("/findByEmail/{email}") // we'll work with path variables
+    public List<Customer> findByEmail(@PathVariable String email){
+        return customerService.findByEmail(email);    
+    }
 }
