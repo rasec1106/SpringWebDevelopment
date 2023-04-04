@@ -28,7 +28,7 @@ public class CustomerController {
         return customerService.findAll();    
     }
     
-    /**
+    /*
      * There are 2 ways of working with parameters
      * 1. https:xxx/yy/findById?id=1 ... queryString or requestParams
      * 2. https:xxx/yy/findById/1    ... pathVariables
