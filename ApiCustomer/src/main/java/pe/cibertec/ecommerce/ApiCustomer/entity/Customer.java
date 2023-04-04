@@ -5,6 +5,8 @@
 package pe.cibertec.ecommerce.ApiCustomer.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import java.util.Date;
 
 /**
@@ -17,5 +19,6 @@ public class Customer {
     private String name;
     private String email;
     private String phone;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 }
