@@ -8,12 +8,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.util.Date;
+import lombok.Data;
 
 /**
  *
  * @author Cesar Herrera
  */
 @Entity
+@Data // to create automatically getters and setters
 public class Customer {
     private Long id;
     private String name;
