@@ -6,6 +6,7 @@ package pe.cibertec.ecommerce.ApiCustomer.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pe.cibertec.ecommerce.ApiCustomer.dao.CustomerRepository;
 import pe.cibertec.ecommerce.ApiCustomer.entity.Customer;
 
@@ -13,6 +14,7 @@ import pe.cibertec.ecommerce.ApiCustomer.entity.Customer;
  *
  * @author Cesar Herrera
  */
+@Service
 public class CustomerServiceImpl implements CustomerService{
 
     /**
