@@ -5,6 +5,7 @@
 package pe.cibertec.ecommerce.ApiCustomer.dao;
 
 import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import pe.cibertec.ecommerce.ApiCustomer.entity.Customer;
@@ -16,4 +17,6 @@ import pe.cibertec.ecommerce.ApiCustomer.entity.Customer;
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
     public List<Customer> findByEmail(String email);
+    @Query(value = "", nativeQuery = true)
+    public List<Customer> findByEmailContaining(String email);
 }

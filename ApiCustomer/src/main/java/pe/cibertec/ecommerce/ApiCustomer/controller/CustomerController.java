@@ -40,6 +40,6 @@ public class CustomerController {
     
     @GetMapping("/findByEmail/{email}") // we'll work with path variables
     public List<Customer> findByEmail(@PathVariable String email){
-        return customerService.findByEmail(email);    
+        return customerService.findByEmail("%"+email+"%");    
     }
 }
