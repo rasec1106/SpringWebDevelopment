@@ -17,4 +17,5 @@ public interface CustomerService {
     public Customer findByEmail(String email);
     public Customer findByPhone(String phone);
     public List<Customer> findByPhoneContaining(String phone);
+    public Customer add(Customer customer);
 }

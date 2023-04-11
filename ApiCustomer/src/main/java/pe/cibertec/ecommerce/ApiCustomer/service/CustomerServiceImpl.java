@@ -47,5 +47,10 @@ public class CustomerServiceImpl implements CustomerService{
     public List<Customer> findByPhoneContaining(String phone) {
         return customerRepository.findByPhoneContaining(phone);
     }
+
+    @Override
+    public Customer add(Customer customer) {
+        return customerRepository.save(customer);
+    }
     
 }
