@@ -38,8 +38,18 @@ public class CustomerController {
         return customerService.findById(id);    
     }
     
-    @GetMapping("/findByEmail/{email}") // we'll work with path variables
+    @GetMapping("/findByEmail/{email}") 
     public Customer findByEmail(@PathVariable String email){
         return customerService.findByEmail(email);    
+    }
+    
+    @GetMapping("/findByPhone/{phone}") 
+    public Customer findByPhone(@PathVariable String phone){
+        return customerService.findByPhone(phone);    
+    }
+    
+    @GetMapping("/findByPhoneContaining/{phone}") 
+    public List<Customer> findByPhoneContaining(@PathVariable String phone){
+        return customerService.findByPhoneContaining(phone);    
     }
 }

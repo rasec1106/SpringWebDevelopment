@@ -37,5 +37,15 @@ public class CustomerServiceImpl implements CustomerService{
     public Customer findByEmail(String email) {
         return customerRepository.findByEmail(email);
     }
+
+    @Override
+    public Customer findByPhone(String phone) {
+        return customerRepository.findByPhone(phone);
+    }
+
+    @Override
+    public List<Customer> findByPhoneContaining(String phone) {
+        return customerRepository.findByPhoneContaining(phone);
+    }
     
 }

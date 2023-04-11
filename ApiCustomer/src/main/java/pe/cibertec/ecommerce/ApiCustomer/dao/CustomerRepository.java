@@ -17,6 +17,7 @@ import pe.cibertec.ecommerce.ApiCustomer.entity.Customer;
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
     public Customer findByEmail(String email);
-    //@Query(value = "", nativeQuery = true)
-    //public List<Customer> findByEmailContaining(String email);
+    public Customer findByPhone(String phone);
+    @Query("SELECT c FROM Customer c WHERE c.phone like %?1%") //?1 means the first parameter
+    public List<Customer> findByPhoneContaining(String phone);
 }
