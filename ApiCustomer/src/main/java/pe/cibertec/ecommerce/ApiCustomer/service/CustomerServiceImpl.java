@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public List<Customer> findByEmail(String email) {
+    public Customer findByEmail(String email) {
         return customerRepository.findByEmail(email);
     }
     
