@@ -19,4 +19,5 @@ public interface CustomerService {
     public List<Customer> findByPhoneContaining(String phone);
     public Customer add(Customer customer);
     public Customer update(Long id, Customer customer);
+    public void delete(Long id);
 }

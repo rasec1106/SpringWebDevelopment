@@ -6,6 +6,7 @@ package pe.cibertec.ecommerce.ApiCustomer.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -65,5 +66,10 @@ public class CustomerController {
     @PutMapping("/update/{id}")
     public Customer update(@PathVariable Long id, @RequestBody Customer customer){
         return customerService.update(id, customer);
+    }
+    
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id){
+        customerService.delete(id);
     }
 }
