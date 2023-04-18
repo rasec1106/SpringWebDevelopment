@@ -4,6 +4,7 @@
  */
 package pe.cibertec.ecommerce.ApiShoppingCart.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,6 +34,7 @@ public class Order {
     private Customer customer;
     private Date orderDate;
     private BigDecimal amount;
-    @OneToMany
+    @OneToMany(mappedBy = "order" // name of the VARIABLE in the child class
+            ,cascade = CascadeType.ALL) // to save also the into the child db
     private Set<OrderItem> orderItems;
 }
