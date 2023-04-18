@@ -7,6 +7,7 @@ package pe.cibertec.ecommerce.ApiShoppingCart.service;
 import jakarta.transaction.Transactional;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pe.cibertec.ecommerce.ApiShoppingCart.dao.OrderRepository;
 import pe.cibertec.ecommerce.ApiShoppingCart.dto.PurchaseRequest;
 import pe.cibertec.ecommerce.ApiShoppingCart.dto.PurchaseResponse;
@@ -16,6 +17,7 @@ import pe.cibertec.ecommerce.ApiShoppingCart.entity.Order;
  *
  * @author Cesar Herrera
  */
+@Service
 public class ShoppingCartServiceImpl implements ShoppingCartService{
 
     @Autowired
