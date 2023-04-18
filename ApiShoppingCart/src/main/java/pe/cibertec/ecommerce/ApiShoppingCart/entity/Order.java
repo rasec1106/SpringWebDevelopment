@@ -13,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,4 +38,12 @@ public class Order {
     @OneToMany(mappedBy = "order" // name of the VARIABLE in the child class
             ,cascade = CascadeType.ALL) // to save also the into the child db
     private Set<OrderItem> orderItems;
+    
+    public void addOrderItem(OrderItem orderItem){
+        if(orderItems == null){
+            orderItems = new HashSet<>();
+        }
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
 }
