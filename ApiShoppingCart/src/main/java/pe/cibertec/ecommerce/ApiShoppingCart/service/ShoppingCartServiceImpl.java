@@ -4,10 +4,13 @@
  */
 package pe.cibertec.ecommerce.ApiShoppingCart.service;
 
+import jakarta.transaction.Transactional;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import pe.cibertec.ecommerce.ApiShoppingCart.dao.OrderRepository;
 import pe.cibertec.ecommerce.ApiShoppingCart.dto.PurchaseRequest;
 import pe.cibertec.ecommerce.ApiShoppingCart.dto.PurchaseResponse;
+import pe.cibertec.ecommerce.ApiShoppingCart.entity.Order;
 
 /**
  *
@@ -16,11 +19,22 @@ import pe.cibertec.ecommerce.ApiShoppingCart.dto.PurchaseResponse;
 public class ShoppingCartServiceImpl implements ShoppingCartService{
 
     @Autowired
-    private OrderRepository OrderRepository;
+    private OrderRepository orderRepository;
     
     @Override
+    @Transactional // this assures commit or rollback
     public PurchaseResponse placeOrder(PurchaseRequest purchaseRequest) {
-        return null;
+        Order order = purchaseRequest.getOrder(); // get the order from the request
+        order.setTrackingNumber(getTrackingNumber()); // random UID from method
+        // Add the list of items to the order
+        purchaseRequest.getOrderItems().forEach(orderItem -> order.addOrderItem(orderItem));
+        // Save order and orderItems - for the cascade annotation
+        orderRepository.save(order);
+        return new PurchaseResponse(order.getTrackingNumber());
+    }
+    
+    private String getTrackingNumber(){
+        return UUID.randomUUID().toString();
     }
     
 }
