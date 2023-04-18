@@ -33,6 +33,7 @@ public class Order {
     private Long orderId;
     @Embedded
     private Customer customer;
+    private String trackingNumber;
     private Date orderDate;
     private BigDecimal amount;
     @OneToMany(mappedBy = "order" // name of the VARIABLE in the child class
