@@ -20,6 +20,7 @@ public interface CustomerService {
     public Customer findByEmail(String email);
     public Customer findByPhone(String phone);
     public List<Customer> findByPhoneContaining(String phone);
+    public Page<Customer> findByNameContaining(String name, int page, int size);
     public Customer add(Customer customer);
     public Customer update(Long id, Customer customer);
     public void delete(Long id);

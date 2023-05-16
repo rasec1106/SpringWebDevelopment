@@ -60,6 +60,11 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
+    public Page<Customer> findByNameContaining(String name, int page, int size) {
+        return customerRepository.findByNameContaining(name, PageRequest.of(page, size));
+    }
+    
+    @Override
     public Customer add(Customer customer) {
         return customerRepository.save(customer);
     }

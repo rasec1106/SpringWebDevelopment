@@ -77,6 +77,13 @@ public class CustomerController {
                 HttpStatus.OK);    
     }
     
+    @GetMapping("/findByNameContaining/{name}/page/{page}/size/{size}") 
+    public ResponseEntity<Page<Customer>> findByNameContaining(
+            @PathVariable String name, @PathVariable int page, @PathVariable int size){
+        return new ResponseEntity<>(customerService.findByNameContaining(name,page,size),
+                HttpStatus.OK);    
+    }
+    
     @PostMapping("/add")
     public ResponseEntity<Customer> add(@RequestBody Customer customer){
         return new ResponseEntity<>(customerService.add(customer),
