@@ -27,4 +27,7 @@ public class GlobalExceptionHandler {
         var errorResponse = new ErrorResponseDto(status, ex.getMessage(), ex.getStackTrace().toString());
         return new ResponseEntity<>(errorResponse, status);
     }
+    
+    // When we validate we can have multiple errors, so in this case the error response is getting a "message" as an array
+    // so we can pass multiple errors
 }

@@ -84,6 +84,7 @@ public class CustomerController {
                 HttpStatus.OK);    
     }
     
+    // To add the validator we need to use @Validate before the @RequestBody to tell the framework to validate
     @PostMapping("/add")
     public ResponseEntity<Customer> add(@RequestBody Customer customer){
         return new ResponseEntity<>(customerService.add(customer),

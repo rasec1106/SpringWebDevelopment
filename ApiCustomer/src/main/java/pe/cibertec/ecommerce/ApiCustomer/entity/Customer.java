@@ -23,6 +23,14 @@ public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    /*
+     * Validations are with annotations
+     * Non nullable, nullable, unique, min, max, ranges, format - regex?
+     * Empty, etc...
+    
+               // Add validator as a starter to the pom to use this!!!
+     */
+    // Annotations non nullable, unique
     private String name;
     private String email;
     private String phone;
