@@ -5,6 +5,7 @@
 package pe.cibertec.ecommerce.ApiCustomer.service;
 
 import java.util.List;
+import org.springframework.data.domain.Page;
 import pe.cibertec.ecommerce.ApiCustomer.entity.Customer;
 
 /**
@@ -13,6 +14,8 @@ import pe.cibertec.ecommerce.ApiCustomer.entity.Customer;
  */
 public interface CustomerService {
     public List<Customer> findAll();
+    // Page is a Collection, like a List. But we cand o pagination with it
+    public Page<Customer> findAll(int page, int size);
     public Customer findById(Long id);
     public Customer findByEmail(String email);
     public Customer findByPhone(String phone);

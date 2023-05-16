@@ -6,6 +6,7 @@ package pe.cibertec.ecommerce.ApiCustomer.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -38,6 +39,12 @@ public class CustomerController {
     @GetMapping("/findAll")
     public ResponseEntity<List<Customer>> findAll(){
         return new ResponseEntity<>(customerService.findAll(),
+                HttpStatus.OK);   
+    }
+    
+    @GetMapping("/findAll/page/{page}/size/{size}")
+    public ResponseEntity<Page<Customer>> findAll(@PathVariable int page, @PathVariable int size){
+        return new ResponseEntity<>(customerService.findAll(page, size),
                 HttpStatus.OK);   
     }
     

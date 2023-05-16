@@ -6,6 +6,8 @@ package pe.cibertec.ecommerce.ApiCustomer.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pe.cibertec.ecommerce.ApiCustomer.dao.CustomerRepository;
 import pe.cibertec.ecommerce.ApiCustomer.entity.Customer;
@@ -27,6 +29,11 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public List<Customer> findAll() {
         return (List<Customer>)customerRepository.findAll(); // this method is available because we are using CrudRepository
+    }
+        
+    @Override
+    public Page<Customer> findAll(int page, int size) {
+        return customerRepository.findAll(PageRequest.of(page, size));
     }
 
     @Override
