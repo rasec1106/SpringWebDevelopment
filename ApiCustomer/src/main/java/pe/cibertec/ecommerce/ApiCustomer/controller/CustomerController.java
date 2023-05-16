@@ -47,23 +47,27 @@ public class CustomerController {
      * 2. https:xxx/yy/findById/1    ... pathVariables
      */
     @GetMapping("/findById/{id}") // we'll work with path variables
-    public Customer findById(@PathVariable Long id){
-        return customerService.findById(id);    
+    public ResponseEntity<Customer> findById(@PathVariable Long id){
+        return new ResponseEntity<>(customerService.findById(id),
+                HttpStatus.OK);   
     }
     
     @GetMapping("/findByEmail/{email}") 
-    public Customer findByEmail(@PathVariable String email){
-        return customerService.findByEmail(email);    
+    public ResponseEntity<Customer> findByEmail(@PathVariable String email){
+        return new ResponseEntity<>(customerService.findByEmail(email),
+                HttpStatus.OK); 
     }
     
     @GetMapping("/findByPhone") // the correct path is /findByPhone?phone=963xxx
-    public Customer findByPhone(@RequestParam String phone){
-        return customerService.findByPhone(phone);    
+    public ResponseEntity<Customer> findByPhone(@RequestParam String phone){
+        return new ResponseEntity<>(customerService.findByPhone(phone),
+                HttpStatus.OK);    
     }
     
     @GetMapping("/findByPhoneContaining/{phone}") 
-    public List<Customer> findByPhoneContaining(@PathVariable String phone){
-        return customerService.findByPhoneContaining(phone);    
+    public ResponseEntity<List<Customer>> findByPhoneContaining(@PathVariable String phone){
+        return new ResponseEntity<>(customerService.findByPhoneContaining(phone),
+                HttpStatus.OK);    
     }
     
     @PostMapping("/add")
@@ -73,8 +77,9 @@ public class CustomerController {
     }
     
     @PutMapping("/update/{id}")
-    public Customer update(@PathVariable Long id, @RequestBody Customer customer){
-        return customerService.update(id, customer);
+    public ResponseEntity<Customer> update(@PathVariable Long id, @RequestBody Customer customer){
+        return new ResponseEntity<>(customerService.update(id, customer),
+                HttpStatus.OK); 
     }
     
     @DeleteMapping("/delete/{id}")
