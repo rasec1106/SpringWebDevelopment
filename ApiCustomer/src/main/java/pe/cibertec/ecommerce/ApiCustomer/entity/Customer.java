@@ -10,6 +10,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Pattern;
 import java.util.Date;
 import lombok.Data;
 
@@ -32,7 +34,9 @@ public class Customer {
      */
     // Annotations non nullable, unique
     private String name;
+    @Email(message = "Email is not valid")
     private String email;
+    @Pattern(regexp = "^9[0-9]{8}$", message = "Number is not valid")
     private String phone;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;

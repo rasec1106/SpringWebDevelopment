@@ -4,6 +4,7 @@
  */
 package pe.cibertec.ecommerce.ApiCustomer.controller;
 
+import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -100,5 +101,10 @@ public class CustomerController {
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id){
         customerService.delete(id);
+    }
+    
+    @PostMapping("/validate")
+    public ResponseEntity<String> validate(@Valid @RequestBody Customer customer){
+        return ResponseEntity.ok("valid");
     }
 }
