@@ -48,7 +48,7 @@ public class AuthController {
         user.setName(signUpDto.getName());
         user.setUserName(signUpDto.getUserName());
         user.setEmail(signUpDto.getEmail());
-        user.setPassword(signUpDto.getPassword());
+        user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
         user.setRoles(signUpDto.getRoles());
         
         var result = userService.add(user);
