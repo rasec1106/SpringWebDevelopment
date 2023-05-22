@@ -18,7 +18,7 @@ public interface UserRepository extends JpaRepository<User, Long>{
     // To avoid getting problems with NULLs we can use Optional<>
     public Optional<User> findByEmail(String email);    
     public Optional<User> findByUserName(String userName);
-    public Optional<User> finByUserNameOrEmail(String userName, String email);
+    public Optional<User> findByUserNameOrEmail(String userName, String email);
     public Optional<Boolean> existsByEmail(String email); // it makes a count internally
     public Optional<Boolean> existsByUserName(String userName);
 }
