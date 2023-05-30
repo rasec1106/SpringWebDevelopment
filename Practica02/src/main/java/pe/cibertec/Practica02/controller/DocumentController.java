@@ -6,6 +6,7 @@ package pe.cibertec.Practica02.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,6 +33,12 @@ public class DocumentController {
     @GetMapping("/findAll")
     public ResponseEntity<List<Document>> findAll(){
         return new ResponseEntity<>(documentService.findAll(),HttpStatus.OK);
+    }
+    
+    @GetMapping("/findAll/page/{page}/size/{size}")
+    public ResponseEntity<Page<Document>> findAll(@PathVariable int page, @PathVariable int size){
+        return new ResponseEntity<>(documentService.findAll(page, size),
+                HttpStatus.OK);   
     }
     
     @GetMapping("/findById/{id}")

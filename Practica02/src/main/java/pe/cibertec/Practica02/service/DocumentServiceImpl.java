@@ -6,6 +6,8 @@ package pe.cibertec.Practica02.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pe.cibertec.Practica02.dao.DocumentRepository;
 import pe.cibertec.Practica02.entity.Document;
@@ -48,6 +50,11 @@ public class DocumentServiceImpl implements DocumentService{
     public void delete(Long id) {
         Document documentDB = documentRepository.findById(id).get();
         documentRepository.delete(documentDB);
+    }
+
+    @Override
+    public Page<Document> findAll(int page, int size) {
+        return documentRepository.findAll(PageRequest.of(page, size));
     }
     
 }

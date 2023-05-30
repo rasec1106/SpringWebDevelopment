@@ -5,6 +5,7 @@
 package pe.cibertec.Practica02.service;
 
 import java.util.List;
+import org.springframework.data.domain.Page;
 import pe.cibertec.Practica02.entity.Document;
 
 /**
@@ -13,6 +14,7 @@ import pe.cibertec.Practica02.entity.Document;
  */
 public interface DocumentService {
     public List<Document> findAll();
+    public Page<Document> findAll(int page, int size);
     public Document findById(Long id);
     public Document add(Document document);
     public Document update(Long id, Document document);

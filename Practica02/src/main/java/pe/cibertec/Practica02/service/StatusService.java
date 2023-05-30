@@ -5,6 +5,7 @@
 package pe.cibertec.Practica02.service;
 
 import java.util.List;
+import org.springframework.data.domain.Page;
 import pe.cibertec.Practica02.entity.DocumentStatus;
 
 /**
@@ -13,6 +14,7 @@ import pe.cibertec.Practica02.entity.DocumentStatus;
  */
 public interface StatusService {
     public List<DocumentStatus> findAll();
+    public Page<DocumentStatus> findAll(int page, int size);
     public DocumentStatus findById(Long id);
     public DocumentStatus add(DocumentStatus status);
     public DocumentStatus update(Long id, DocumentStatus status);
