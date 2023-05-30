@@ -19,3 +19,7 @@ Then in Apache Netbeans:
 
 We need also to create a ConfigServer, where we centralize all the application.properties, so when we update it
 we dont need to stop all the containers but they are notified and we can have a "hot-fix"
+
+To create this ConfigServer we create a new project in NetBeans and add some dependencies:
+	- Spring Boot Actuator -> for healthcheck
+	- Config Server
