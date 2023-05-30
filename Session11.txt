@@ -23,3 +23,9 @@ we dont need to stop all the containers but they are notified and we can have a 
 To create this ConfigServer we create a new project in NetBeans and add some dependencies:
 	- Spring Boot Actuator -> for healthcheck
 	- Config Server
+
+Nota, creando el contenedor de configserver como hicimos anteriormente, ese nombre del contenedor nos va a servir
+para que nuestros otros contenedores apunten a los archivos de configuracion.
+
+Trabajo: Las 4 apis deben conectarse al config server y se lo pasamos por un drive.
+Estamos con spring boot 3 para la union de application.properties
