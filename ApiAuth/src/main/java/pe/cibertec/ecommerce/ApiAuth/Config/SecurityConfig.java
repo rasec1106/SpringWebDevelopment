@@ -44,7 +44,8 @@ public class SecurityConfig {
          http.csrf().disable()
                  .authorizeHttpRequests((authorize) ->
                          authorize.requestMatchers("/api/auth/**").permitAll() //everything under this route is permited
-                                 .anyRequest().authenticated() // anything else needs to be authenticated
+                                 //.anyRequest().authenticated() // anything else needs to be authenticated
+                                 .anyRequest().permitAll() // just to use the swagger
                  );
          return http.build();
      }

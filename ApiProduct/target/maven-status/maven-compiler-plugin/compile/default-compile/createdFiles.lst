@@ -1,1 +1,4 @@
+pe\cibertec\ecommerce\ApiProduct\entity\Product.class
 pe\cibertec\ecommerce\ApiProduct\ApiProductApplication.class
+pe\cibertec\ecommerce\ApiProduct\controller\ProductController.class
+pe\cibertec\ecommerce\ApiProduct\dao\ProductRepository.class
