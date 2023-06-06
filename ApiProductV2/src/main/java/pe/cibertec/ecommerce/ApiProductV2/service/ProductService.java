@@ -4,6 +4,7 @@
  */
 package pe.cibertec.ecommerce.ApiProductV2.service;
 
+import pe.cibertec.ecommerce.ApiProductV2.dto.ProductDtoResponse;
 import pe.cibertec.ecommerce.ApiProductV2.entity.Product;
 
 /**
@@ -12,4 +13,5 @@ import pe.cibertec.ecommerce.ApiProductV2.entity.Product;
  */
 public interface ProductService {
     public Product add(Product product);
+    public ProductDtoResponse findById(Long id);
 }
