@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pe.cibertec.ecommerce</groupId>
-	<artifactId>ApiCategory</artifactId>
+	<artifactId>ApiProductV2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ApiCategory</name>
-	<description>Api Category microservice</description>
+	<name>ApiProductV2</name>
+	<description>ApiProduct</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
