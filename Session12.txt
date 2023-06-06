@@ -1,0 +1,8 @@
+TAREA:
+1. Crear un EUREKA Server usando Spring 3
+2. Resgistrar las apis en ese servidor. Para eso se crea un Eureka Client en cada cliente.
+Cada vez que se levanta un microservicio, el eureka client registra al microservicio en el eureka server.
+3. Cambiar a que apunte en vez de localhost al Eureka server (en docker deberia estar).
+Lo va a buscar por nombre.
+Este eureka server tiene la capacidad de usar un loadbalancer que va a elegir que replica se va a utilizar.
+Api Product ya no consume directamente a ApiCategory, sino de EurekaServer.
