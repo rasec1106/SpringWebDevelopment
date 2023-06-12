@@ -5,7 +5,6 @@
 package pe.cibertec.ecommerce.ApiProductV2.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.stereotype.Service;
 import pe.cibertec.ecommerce.ApiProductV2.dao.ProductRepository;
 import pe.cibertec.ecommerce.ApiProductV2.dto.ProductDtoResponse;
@@ -17,7 +16,6 @@ import pe.cibertec.ecommerce.ApiProductV2.entity.Product;
  * @author Cesar Herrera
  */
 @Service
-@EnableFeignClients
 public class ProductServiceImpl implements ProductService{
 
     @Autowired

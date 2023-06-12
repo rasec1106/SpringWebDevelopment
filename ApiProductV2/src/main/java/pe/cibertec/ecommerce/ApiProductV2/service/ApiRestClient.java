@@ -15,7 +15,7 @@ import pe.cibertec.ecommerce.ApiProductV2.entity.Category;
  */
 // value is a key:value needed by syntaxis
 // url is where our server is located
-@FeignClient(value = "feign-client", url = "http://localhost:8081")
+@FeignClient(value = "feign-client", url = "http://apicategory:8080")
 public interface ApiRestClient {
     @GetMapping("/api/category/findByIdCategory/{idCategory}")
     public Category findByIdCategory(@PathVariable String idCategory);
